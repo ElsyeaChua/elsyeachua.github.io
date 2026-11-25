@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elsyea Chua Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, confident, friendly — a student ready to work
+   IDEA: a fresh bakery shop window — golden crust, sea-salt flakes, a clean counter
+   PICTURE: a large drawn salt bread roll on a board, salt flakes falling
+   COLOUR and TYPE: crust gold dominant, cocoa support, sea-salt blue accent; Sora + Inter
+   LAYOUT: gold hero band full width, then white sections, Saltique as a feature band, cocoa contact footer */
+:root{color-scheme:light dark;
+--bg:light-dark(#fffdf9,#17110d);--ink:light-dark(#2b1a10,#f6ece2);--soft:light-dark(#6b5546,#c9b8a8);
+--gold:light-dark(#e9a83a,#c98a26);--goldlt:light-dark(#fbe9c6,#2a1f14);--cocoa:light-dark(#3b2416,#0f0a07);
+--salt:light-dark(#2f6fb0,#7fb3e6);--card:light-dark(#ffffff,#211812);--line:light-dark(#ecdfcf,#3a2c21)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:18px}
+h3{font-size:19px;margin-bottom:6px}
+p{margin:0 0 14px;max-width:66ch}
+a{color:inherit}
+.band{padding:clamp(40px,6vw,88px) max(5vw,16px)}
+.wrap{max-width:1180px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px max(5vw,16px)}
+.logo{font:700 18px Sora,sans-serif;text-decoration:none}
+.logo span{color:var(--salt)}
+.links{display:flex;gap:4px;flex-wrap:wrap}
+.links a{text-decoration:none;font-weight:500;font-size:15px;padding:10px 12px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+.links a:hover,.links a:focus-visible{background:var(--goldlt);outline:none}
+.hero{background:var(--gold);color:#2b1a10;padding-bottom:clamp(40px,6vw,88px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hello{font-weight:600;font-size:17px;margin-bottom:10px}
+.hero h1{font-size:clamp(44px,7vw,76px);margin-bottom:16px}
+.role{font:600 clamp(19px,2.2vw,23px)/1.3 Sora,sans-serif;margin-bottom:18px}
+.hero p{font-size:17px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid #2b1a10}
+.btn.main{background:#2b1a10;color:#fff7ea}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.fig{position:relative;max-width:480px;width:100%;justify-self:center;align-self:end;aspect-ratio:700/788;margin-bottom:calc(-1*clamp(40px,6vw,88px))}
+.disc{position:absolute;left:4%;right:4%;top:6%;aspect-ratio:1;border-radius:50%;background:#fff3d9;box-shadow:inset 0 0 0 2px rgba(43,26,16,.08)}
+.disc::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(43,26,16,.18)}
+.me{position:relative;display:block;width:100%;height:auto;animation:rise .9s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.me{animation:none}html{scroll-behavior:auto}}
+.badge{position:absolute;right:0;top:12%;background:#2b1a10;color:#fff7ea;border-radius:16px;padding:10px 16px;font-size:13px;line-height:1.3;box-shadow:0 8px 20px rgba(43,26,16,.25)}
+.badge b{display:block;font:700 17px Sora,sans-serif;color:#fbe9c6}
+.factband{padding-top:0;padding-bottom:0;background:var(--gold)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;position:relative;z-index:1;transform:translateY(32px)}
+#about{padding-top:clamp(72px,9vw,120px)}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.fact b{display:block;font:600 18px Sora,sans-serif;margin-bottom:2px}
+.fact span{color:var(--soft);font-size:14px}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px)}
+.lead{font-size:clamp(19px,2vw,22px);line-height:1.5}
+.feature{background:var(--goldlt)}
+.proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.tag{display:inline-block;background:var(--salt);color:#fff;font-weight:600;font-size:13px;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.brand{background:var(--card);border-radius:22px;border:1px solid var(--line);padding:clamp(20px,3vw,32px);text-align:center}
+.brand{padding:12px;overflow:hidden}.brand img{display:block;width:100%;height:auto;border-radius:14px}
+.ig{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:10px;font-weight:600;color:var(--salt);text-decoration:none;border-radius:12px}
+.ig:hover,.ig:focus-visible{background:var(--goldlt);outline:none}
+.steps{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.ic{width:44px;height:44px;border-radius:12px;background:var(--gold);display:grid;place-items:center}
+.ic svg{width:24px;height:24px;stroke:#2b1a10;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.steps p{margin:0;color:var(--soft);font-size:15px}
+.learn{margin-top:22px;padding:18px 20px;border-left:4px solid var(--salt);background:var(--card);border-radius:0 14px 14px 0}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-weight:500;font-size:15px}
+.chip.hl{border-color:var(--gold);background:var(--goldlt)}
+.edu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card .meta{color:var(--soft);font-size:15px;margin-bottom:8px}
+.contact{background:var(--cocoa);color:#f6ece2}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.contact p{color:#d8c8b8}
+.clist{display:grid;gap:12px}
+.citem{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);text-decoration:none;min-height:56px}
+.citem:hover,.citem:focus-visible{background:rgba(255,255,255,.13);outline:none}
+.citem svg{width:22px;height:22px;flex:none;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.citem b{display:block;font-size:13px;color:#cbb9a7;font-weight:500}
+.citem span{overflow-wrap:anywhere;font-weight:600}
+footer{background:var(--cocoa);color:#a8927f;text-align:center;font-size:14px;padding:0 16px 32px}
+@media(max-width:860px){
+.hero .wrap,.about,.proj,.skills,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fig{max-width:420px}}
+@media(max-width:600px){.edu{grid-template-columns:minmax(0,1fr)}.links a{padding:8px 10px;font-size:14px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+<a class="logo" href="#top">Elsyea<span>.</span></a>
+<div class="links"><a href="#about">About</a><a href="#project">Project</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<header class="hero band" id="top"><div class="wrap">
+<div>
+<div class="hello">Hi, I'm</div>
+<h1>Elsyea Chua</h1>
+<div class="role">Business Management student · Marketing &amp; Entrepreneurship</div>
+<p>Fifth-semester student at Universitas Tarumanagara, looking for an internship where I can learn, contribute and grow in a professional working environment.</p>
+<div class="btns"><a class="btn main" href="#contact">Contact me</a><a class="btn" href="#project">See my project</a></div>
+</div>
+<div class="fig">
+<div class="disc" aria-hidden="true"></div>
+<img class="me" src="elsyea.webp" alt="Portrait of Elsyea Chua" width="700" height="788">
+<div class="badge" aria-hidden="true"><b>Saltique</b>team member</div>
+</div>
+</div>
+</header>
+<div class="band factband"><div class="wrap facts">
+<div class="fact"><b>Universitas Tarumanagara</b><span>Business Management</span></div>
+<div class="fact"><b>5th semester</b><span>Entrepreneurship specialization</span></div>
+<div class="fact"><b>Saltique</b><span>Group bakery business</span></div>
+<div class="fact"><b>Open to work</b><span>Internship opportunities</span></div>
+</div></div>
+
+<section class="band" id="about"><div class="wrap about">
+<div>
+<h2>About me</h2>
+<p class="lead">I'm interested in business, marketing and entrepreneurship, and I like learning by doing.</p>
+</div>
+<div>
+<p>I am a fifth-semester Business Management student at Universitas Tarumanagara. I enjoy learning new things, working with others and taking on new challenges.</p>
+<p>I am a responsible and adaptable person with good communication and teamwork skills. I am looking for opportunities to gain experience, improve my skills and learn more about the professional working environment.</p>
+</div>
+</div></section>
+
+<section class="band feature" id="project"><div class="wrap">
+<span class="tag">Featured project</span>
+<h2>Saltique: modern salt bread</h2>
+<div class="proj">
+<div>
+<div class="brand"><img src="saltique.jpg" alt="Saltique logo: homemade salt bread, crispy outside, soft inside, perfectly salted" width="900" height="755">
+<a class="ig" href="https://www.instagram.com/saltique.id">Visit @saltique.id on Instagram →</a>
+</div>
+<div class="learn"><b>What I took away:</b> how a business idea turns into a real product, and how branding and talking directly with customers shape sales.</div>
+</div>
+<div>
+<p>Saltique is a group entrepreneurship project developed as part of my university's Entrepreneurship specialization. My team and I applied what we learned in class by developing and managing a real business.</p>
+<p>We focused on modern salt bread, aiming to introduce an appealing bakery product through a variety of flavours and a distinctive brand concept.</p>
+<ul class="steps">
+<li><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></div><div><h3>Business concept</h3><p>Shaped the idea, the product focus on modern salt bread and its range of flavours.</p></div></li>
+<li><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 3.9.9 5.5L12 14.6 7.1 17.2 8 11.7 4 7.8l5.6-.8z"/></svg></div><div><h3>Brand identity</h3><p>Built a distinctive brand concept so the product stands out to customers.</p></div></li>
+<li><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 14c0-4 3.6-7 8-7s8 3 8 7v4H4z"/><path d="M8 11c1-1 2.4-1.5 4-1.5s3 .5 4 1.5"/></svg></div><div><h3>Product preparation</h3><p>Prepared the products and kept quality consistent for sale.</p></div></li>
+<li><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M4 9h16v11H4zM9 20v-6h6v6"/></svg></div><div><h3>Direct sales</h3><p>Sold directly to customers, explaining the product and handling transactions.</p></div></li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<section class="band" id="skills"><div class="wrap">
+<h2>Skills</h2>
+<div class="skills">
+<div><h3>Business</h3><p style="color:var(--soft)">Built through coursework and the Saltique project.</p>
+<div class="chips"><span class="chip hl">Marketing</span><span class="chip hl">Entrepreneurship</span><span class="chip">Business concept development</span><span class="chip">Brand identity</span><span class="chip">Direct sales</span><span class="chip">Customer interaction</span></div></div>
+<div><h3>Personal</h3><p style="color:var(--soft)">How I work with people and challenges.</p>
+<div class="chips"><span class="chip hl">Communication</span><span class="chip hl">Teamwork</span><span class="chip">Responsibility</span><span class="chip">Adaptability</span><span class="chip">Eager to learn</span></div></div>
+</div>
+<h2 style="margin-top:clamp(40px,6vw,72px)">Education</h2>
+<div class="edu">
+<div class="card"><div class="meta">Currently in 5th semester</div><h3>Universitas Tarumanagara</h3><p style="margin:0">Bachelor of Business Management, Faculty of Economics and Business</p></div>
+<div class="card"><div class="meta">Specialization</div><h3>Entrepreneurship</h3><p style="margin:0">Hands-on business projects, including building and running Saltique with my team.</p></div>
+</div>
+</div></section>
+
+<section class="band contact" id="contact"><div class="wrap">
+<div>
+<h2>Let's work together</h2>
+<p>I'm open to internship opportunities in marketing, business development and entrepreneurship. Feel free to reach out, and I'd be happy to talk.</p>
+</div>
+<div class="clist">
+<a class="citem" href="mailto:elsyea1717@gmail.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><b>Email</b><span>elsyea1717@gmail.com</span></div></a>
+<a class="citem" href="https://www.linkedin.com/in/elsyeachua"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><div><b>LinkedIn</b><span>linkedin.com/in/elsyeachua</span></div></a>
+<a class="citem" href="https://www.instagram.com/saltique.id"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg><div><b>Saltique on Instagram</b><span>@saltique.id</span></div></a>
+</div>
+</div></section>
+<footer>© 2026 Elsyea Chua · Universitas Tarumanagara</footer>
+
+</body>
+</html>
